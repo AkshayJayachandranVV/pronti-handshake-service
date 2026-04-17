@@ -18,6 +18,5 @@ export class Handshake {
 
 export const HandshakeSchema = SchemaFactory.createForClass(Handshake);
 
-// Index on candidateId so we can query "all handshakes for candidate X" efficiently.
-// Should be relatively low-cardinality in prod, but still worth having.
+
 HandshakeSchema.index({ candidateId: 1 });
