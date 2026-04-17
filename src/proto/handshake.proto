@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package handshake;
+
+
+service HandshakeService {
+  rpc takeHomeHandshake (HandshakeRequest) returns (HandshakeResponse);
+}
+
+message HandshakeRequest {
+  string candidateId = 1;
+  string message     = 2;
+  bool   persist     = 3;
+}
+
+message HandshakeResponse {
+  bool   success   = 1;
+  string reply     = 2;
+  bool   persisted = 3;
+  string timestamp = 4;
+}
